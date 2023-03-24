@@ -1,23 +1,26 @@
 import { getRequests } from "./dataAccess.js"
 
+const CreateLiElement = (obj) => {
+    return          `<li>
+                        ID: ${obj.id},<br>
+                        Description: ${obj.description},<br>
+                        Address: ${obj.address},<br>
+                        Budget: ${obj.budget},<br>
+                        Needed By: ${obj.neededBy}
+                    </li>` 
+}
+
 export const Requests = () => {
     const requests = getRequests()
 
     let html = `
         <ul>
             ${
-                requests.map(request => {
-                    return `<li>
-                        ID: ${request.id},<br>
-                        Description: ${request.description},<br>
-                        Address: ${request.address},<br>
-                        Budget: ${request.budget},<br>
-                        Needed By: ${request.neededBy}
-                    </li>`
-                }).join("")
+                requests.map(CreateLiElement).join("")
             }
         </ul>
     `
 
     return html
 }
+
