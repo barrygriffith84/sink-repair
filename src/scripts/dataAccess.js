@@ -1,14 +1,13 @@
-import { mainContainer } from "./main.js"
+
 
 const applicationState = {
 
     requests: []
 }
 
+const mainContainer = document.querySelector("#container")
 
 const API = "http://localhost:8088"
-
-
 
 export const fetchRequests = () => {
     return fetch(`${API}/requests`)
@@ -36,6 +35,15 @@ export const sendRequest = (userServiceRequest) => {
     .then(() => {
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     })
+}
+
+export const deleteRequest = (id) => {
+    return fetch(`${API}/requests/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
 }
 
 export const getRequests = () => {

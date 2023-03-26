@@ -2,7 +2,7 @@ import { fetchRequests } from "./dataAccess.js"
 import { SinkRepair } from "./SinkRepair.js"
 
 
-export const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container")
 
 mainContainer.addEventListener(
     "stateChanged",
