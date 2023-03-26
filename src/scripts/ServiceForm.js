@@ -1,3 +1,5 @@
+import { sendRequest } from "./dataAccess.js"
+
 
 export const ServiceForm = () => {
     let html = `

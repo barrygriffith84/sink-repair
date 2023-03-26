@@ -1,3 +1,5 @@
+import { mainContainer } from "./main.js"
+
 const applicationState = {
 
     requests: []
@@ -20,6 +22,7 @@ export const fetchRequests = () => {
 }
 
 export const sendRequest = (userServiceRequest) => {
+    
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -28,12 +31,11 @@ export const sendRequest = (userServiceRequest) => {
         body: JSON.stringify(userServiceRequest)
     }
 
-
     return fetch(`${API}/requests`, fetchOptions)
-        .then(response => response.json())
-        .then(() => {
-
-        })
+    .then(response => response.json())
+    .then(() => {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
 }
 
 export const getRequests = () => {
