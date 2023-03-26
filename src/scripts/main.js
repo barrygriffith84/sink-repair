@@ -12,11 +12,13 @@ mainContainer.addEventListener(
 )
 
 const render = () => {
-    fetchRequests().then(
-        () => {
-            mainContainer.innerHTML = SinkRepair()
-        }
-    )
+    fetchRequests()
+        .then(() => fetchPlumbers())
+        .then(
+            () => {
+                mainContainer.innerHTML = SinkRepair()
+            }
+        )
 }
 
 render()

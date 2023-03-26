@@ -6,7 +6,17 @@ const CreateLiElement = (obj) => {
     return `
     <li>
         ${obj.description}
-        <button class="request__delete"
+        <select class="plumbers" id="plumbers">
+        <option value="">Choose</option>
+        ${
+            plumbers.map(
+                plumber => {
+                    return `<option value="${request.id}--${plumber.id}">${plumber.name}</option>`
+                }
+            ).join("")
+        }
+    </select>        
+    <button class="request__delete"
             id="request--${obj.id}">
             Delete
         </button>
