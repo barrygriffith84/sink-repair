@@ -62,3 +62,7 @@ li:nth-child(odd){
 .plumbers {
     padding: 5px;
 }
+
+.completedRequest{
+    background-color: red;
+}

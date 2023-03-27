@@ -1,20 +1,34 @@
 {
-  "plumbers": [],
-  "completions": [],
+  "plumbers": [
+    {
+      "id": 1,
+      "name": "Mario"
+    }
+  ],
+  "completions": [
+    {
+      "requestId": "1",
+      "plumberId": "1",
+      "date_created": 1679855698263,
+      "id": 1
+    }
+  ],
   "requests": [
     {
       "id": 1,
       "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
       "address": "34445 Bianka Ports",
       "budget": 400,
-      "neededBy": "2021-08-27"
+      "neededBy": "2021-08-27",
+      "completed": false
     },
     {
       "description": "I went to a cheese festival and now my toilet won't flush.",
       "address": "187 Elm Street",
       "budget": "1000.53",
       "neededBy": "2023-03-27",
-      "id": 2
+      "id": 2,
+      "completed": false
     }
   ]
 }
